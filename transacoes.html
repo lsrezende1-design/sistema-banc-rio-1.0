@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sistema Bancário #1727</title>
+
+    <script src="js/api.js" defer></script>
+    <script src="js/validacao.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/auth.js"></script>
+<link href="style.css" rel="stylesheet" />
+   
+    <script>
+      protegerPagina();
+      carregarBoasVindas();
+
+    </script>
+
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="sidebar-header">
+          <h5 class="sidebar-title">Sistema</h5>
+        </div>
+        <div class="sidebar-body">
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'clientes.html'"
+          >
+            Gestão de Clientes
+          </button>
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'contas.html'"
+          >
+            Gestão de Contas
+          </button>
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'transacoes.html'"
+          >
+            Transações
+          </button>
+
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'index.html'"
+          >
+            Home
+          </button>
+          <button id="logout">Sair</button>
+        </div>
+      </div>
+
+      <div id="content">
+        <!-- Main -->
+        <main id="main">
+          <!-- Navbar -->
+          <div class="navbar">
+            
+            <p id="boasVindas"></p>
+          </div>
+        </main>
+
+         <section id="box1">
+        <h2>Transações</h2>
+
+      <form id="form-transacao">
+          <label for="transacao-conta">Conta</label>
+
+          <select id="transacao-conta" required>
+            <option value="">Selecione uma conta</option>
+          </select>
+
+          <label for="transacao-tipo">Tipo</label>
+
+          <select id="transacao-tipo">
+            <option value="Depósito">Depósito</option>
+
+            <option value="Saque">Saque</option>
+          </select>
+
+          <label for="transacao-valor">Valor</label>
+
+          <input
+            type="number"
+            id="transacao-valor"
+            min="0.01"
+            step="0.01"
+            required
+          />
+
+          <div id="erro-transacao" role="alert"></div>
+
+          <button type="submit">Registrar</button>
+        </form>
+
+        <h3>Histórico</h3>
+
+        <table id="tabela-transacoes">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Tipo</th>
+              <th>Valor</th>
+              <th>Saldo Novo</th>
+            </tr>
+          </thead>
+
+          <tbody id="tabela-transacoes-corpo">
+            <!--
+            As linhas relacionadas às trasações são criadas pelo ui.js.
+          --></tbody>
+        </table>
+
+        <div id="paginacao-transacoes">
+          <button type="button" id="btn-pagina-anterior">Anterior</button>
+
+          <span id="pagina-atual-info"></span>
+
+          <button type="button" id="btn-pagina-proxima">Próxima</button>
+        </div>
+      </section>
+
+      </div>
+  </body>
+</html>

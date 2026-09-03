@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sistema Bancário #1727</title>
+
+    <script src="js/api.js" defer></script>
+    <script src="js/validacao.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/auth.js"></script>
+    <link href="style.css" rel="stylesheet" />
+
+    <script>
+      protegerPagina();
+      carregarBoasVindas();
+    </script>
+
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="sidebar-header">
+          <h5 class="sidebar-title">Sistema</h5>
+        </div>
+        <div class="sidebar-body">
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'clientes.html'"
+          >
+            Gestão de Clientes
+          </button>
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'contas.html'"
+          >
+            Gestão de Contas
+          </button>
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'transacoes.html'"
+          >
+            Transações
+          </button>
+
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href = 'index.html'"
+          >
+            Home
+          </button>
+
+          <button id="logout">Sair</button>
+        </div>
+      </div>
+
+      <div id="content">
+        <!-- Main -->
+        <main id="main">
+          <!-- Navbar -->
+          <div class="navbar">
+            <p id="boasVindas"></p>
+          </div>
+        </main>
+
+        <!--
+      Área utilizada para mensagens gerais de sucesso ou erro.
+    -->
+        <div id="area-mensagens" role="alert"></div>
+
+        <!-- ========================================= -->
+        <!-- CLIENTES                                  -->
+        <!-- ========================================= -->
+
+        <section id="Box1">
+          <h2>Contas</h2>
+
+          <!--
+        Estrutura preparada para o MÓDULO CONTAS
+      -->
+          <form id="form-conta">
+            <label for="conta-cliente">Cliente</label>
+
+            <select id="conta-cliente" required>
+              <option value="">Selecione um cliente</option>
+            </select>
+
+            <div id="erro-conta" role="alert"></div>
+
+            <label for="conta-tipo">Tipo</label>
+
+            <select id="conta-tipo">
+              <option value="Corrente">Corrente</option>
+
+              <option value="Poupança">Poupança</option>
+            </select>
+
+            <p>Saldo inicial: R$ 0,00</p>
+
+            <button type="submit">Salvar Conta</button>
+          </form>
+
+          <table id="tabela-contas">
+            <thead>
+              <tr>
+                <th>Número</th>
+                <th>Cliente</th>
+                <th>Tipo</th>
+                <th>Saldo</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+
+            <tbody id="tabela-contas-corpo">
+              <!--
+            As linhas dos clientes/Contas são criadas pelo ui.js.
+          -->
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

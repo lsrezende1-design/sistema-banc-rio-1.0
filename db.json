@@ -1,0 +1,40 @@
+{
+  "clientes": [
+    {
+      "nome": "liliab",
+      "cpf": "11111111111",
+      "email": "11111@ccc.ccc",
+      "id": 1
+    },
+    {
+      "nome": "Fabyo",
+      "cpf": "11122233344",
+      "email": "Fabyo@gmail.com",
+      "id": 2
+    },
+    {
+      "nome": "Werlleyn",
+      "cpf": "22233344455",
+      "email": "Werlleyn@gmail.com",
+      "id": 3
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Roberto Silva",
+      "usuario": "roberto",
+      "senha": "1234",
+      "perfil": "admin"
+    },
+    {
+      "id": 2,
+      "nome": "João da Silva",
+      "usuario": "joao",
+      "senha": "abcd",
+      "perfil": "caixa"
+    }
+  ],
+  "contas": [],
+  "transacoes": []
+}

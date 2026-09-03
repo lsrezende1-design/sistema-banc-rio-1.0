@@ -1,0 +1,149 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark table,
+body.dark input,
+body.dark select {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-color: #444444;
+}
+/* ====================================== */
+/* RESET */
+/* ====================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ====================================== */
+/* LAYOUT */
+/* ====================================== */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+
+/* ====================================== */
+/* SIDEBAR */
+/* ====================================== */
+
+#sidebar {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar-header {
+  margin-bottom: 20px;
+}
+
+.sidebar-title {
+  text-align: center;
+}
+
+.sidebar-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ====================================== */
+/* BOTÕES MENU */
+/* ====================================== */
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+
+  background-color: #f8f9fa;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background-color: #e9ecef;
+}
+
+/* ====================================== */
+/* CONTEÚDO */
+/* ====================================== */
+
+#content {
+  padding: 20px;
+}
+
+/* ====================================== */
+/* TOPO */
+/* ====================================== */
+
+#main {
+  background-color: rgb(192, 192, 211);
+
+  color: white;
+
+  padding: 20px;
+
+  border-radius: 8px;
+
+  margin-bottom: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ====================================== */
+/* BOX CLIENTES */
+/* ====================================== */
+
+#box1 {
+  background-color: white;
+
+  padding: 20px;
+
+  border-radius: 8px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#box1 h2 {
+  margin-bottom: 20px;
+}
+
+/* ====================================== */
+/* FORMULÁRIO */
+/* ====================================== */
+
+#btn-tema {
+  /* margin-bottom: 10px; */
+  margin: 15px;
+  margin-right: -15px;
+}
