@@ -60,7 +60,7 @@
             Home
           </button>
 
-          <button id="logout">Sair</button>
+          <button id="logout" class="btn">Sair</button>
         </div>
       </div>
 
@@ -83,46 +83,53 @@
         <!-- ========================================= -->
 
         <section id="box1">
-          <h2>Clientes</h2>
+          <article class="card">
+            <h2>Clientes</h2>
 
-          <form id="form-cliente" novalidate>
-            <label for="cliente-nome">Nome</label>
+            <form id="form-cliente" novalidate>
+              <label for="cliente-nome">Nome</label>
 
-            <input type="text" id="cliente-nome" required />
+              <input type="text" id="cliente-nome" required />
 
-            <label for="cliente-cpf">CPF</label>
+              <label for="cliente-cpf">CPF</label>
 
-            <input type="text" id="cliente-cpf" maxlength="11" required />
+              <input type="text" id="cliente-cpf" maxlength="11" required />
 
-            <label for="cliente-email">Email</label>
+              <label for="cliente-email">Email</label>
 
-            <input type="email" id="cliente-email" required />
+              <input type="email" id="cliente-email" required />
 
-            <p id="erro-cliente" role="alert"></p>
+              <p id="erro-cliente" role="alert"></p>
 
-            <button type="submit">Salvar cliente</button>
+              <button type="submit">Salvar cliente</button>
 
-            <button type="button" id="btn-cancelar">Cancelar</button>
-          </form>
+              <button type="button" id="btn-cancelar">Cancelar</button>
+            </form>
+          </article>
 
-          <p id="quantidade-clientes"></p>
           <!-- --
       FILTRO por nome
       -->
-          <label for="filtro-cliente-nome"> Buscar por nome </label>
+          <article class="card">
+            <label for="filtro-cliente-nome"> Buscar por nome </label>
 
-          <input type="search" id="filtro-cliente-nome" />
-          <table>
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Email</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody id="tabela-clientes-corpo"></tbody>
-          </table>
+            <input type="search" id="filtro-cliente-nome" />
+          </article>
+
+          <article class="card">
+            <p id="quantidade-clientes"></p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>CPF</th>
+                  <th>Email</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-clientes-corpo"></tbody>
+            </table>
+          </article>
         </section>
       </div>
     </div>

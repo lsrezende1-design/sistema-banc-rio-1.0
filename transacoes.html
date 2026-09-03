@@ -60,7 +60,7 @@
           >
             Home
           </button>
-          <button id="logout">Sair</button>
+          <button id="logout" class="btn">Sair</button>
         </div>
       </div>
 
@@ -75,9 +75,12 @@
         </main>
 
          <section id="box1">
-        <h2>Transações</h2>
+        
+        <article class="card">
+          <h2>Transações</h2>
+        
 
-      <form id="form-transacao">
+      <form id="form-conta">
           <label for="transacao-conta">Conta</label>
 
           <select id="transacao-conta" required>
@@ -106,8 +109,13 @@
 
           <button type="submit">Registrar</button>
         </form>
+</article>
 
+<article class="card">
         <h3>Histórico</h3>
+        
+
+
 
         <table id="tabela-transacoes">
           <thead>
@@ -124,7 +132,8 @@
             As linhas relacionadas às trasações são criadas pelo ui.js.
           --></tbody>
         </table>
-
+</article>
+       <article class="card">
         <div id="paginacao-transacoes">
           <button type="button" id="btn-pagina-anterior">Anterior</button>
 
@@ -132,6 +141,7 @@
 
           <button type="button" id="btn-pagina-proxima">Próxima</button>
         </div>
+        </article>
       </section>
 
       </div>

@@ -60,7 +60,7 @@
             Home
           </button>
 
-          <button id="logout">Sair</button>
+          <button id="logout" class="btn">Sair</button>
         </div>
       </div>
 
@@ -82,52 +82,55 @@
         <!-- CLIENTES                                  -->
         <!-- ========================================= -->
 
-        <section id="Box1">
+        <section id="box1">
           <h2>Contas</h2>
 
           <!--
         Estrutura preparada para o MÓDULO CONTAS
       -->
-          <form id="form-conta">
-            <label for="conta-cliente">Cliente</label>
+          <article class="card">
+            <form id="form-conta">
+              <label for="conta-cliente">Cliente</label>
 
-            <select id="conta-cliente" required>
-              <option value="">Selecione um cliente</option>
-            </select>
+              <select id="conta-cliente" required>
+                <option value="">Selecione um cliente</option>
+              </select>
 
-            <div id="erro-conta" role="alert"></div>
+              <div id="erro-conta" role="alert"></div>
 
-            <label for="conta-tipo">Tipo</label>
+              <label for="conta-tipo">Tipo</label>
 
-            <select id="conta-tipo">
-              <option value="Corrente">Corrente</option>
+              <select id="conta-tipo">
+                <option value="Corrente">Corrente</option>
 
-              <option value="Poupança">Poupança</option>
-            </select>
+                <option value="Poupança">Poupança</option>
+              </select>
 
-            <p>Saldo inicial: R$ 0,00</p>
+              <p>Saldo inicial: R$ 0,00</p>
 
-            <button type="submit">Salvar Conta</button>
-          </form>
+              <button type="submit">Salvar Conta</button>
+            </form>
+          </article>
 
-          <table id="tabela-contas">
-            <thead>
-              <tr>
-                <th>Número</th>
-                <th>Cliente</th>
-                <th>Tipo</th>
-                <th>Saldo</th>
-                <th>Status</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-
-            <tbody id="tabela-contas-corpo">
-              <!--
+          <article class="card">
+            <table id="tabela-contas">
+              <thead>
+                <tr>
+                  <th>Número</th>
+                  <th>Cliente</th>
+                  <th>Tipo</th>
+                  <th>Saldo</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-contas-corpo">
+                <!--
             As linhas dos clientes/Contas são criadas pelo ui.js.
           -->
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </article>
         </section>
       </div>
     </div>

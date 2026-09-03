@@ -56,7 +56,7 @@ function atualizarQuantidadeClientes(clientes) {
     return;
   }
 
-  contador.textContent = `Total de clientes: ${clientes.length}`;
+  contador.textContent = `Total de clientes na carteira: ${clientes.length}`;
 }
 
 // ======================================
@@ -176,6 +176,8 @@ corpoTabelaClientes.addEventListener('click', async (evento) => {
 
       clienteEmEdicao = cliente.id;
 
+      btnCancelar.style.display = 'inline-block';
+
       document.getElementById('cliente-nome').value = cliente.nome;
 
       document.getElementById('cliente-cpf').value = cliente.cpf;
@@ -212,6 +214,10 @@ corpoTabelaClientes.addEventListener('click', async (evento) => {
         clienteEmEdicao = null;
 
         formCliente.reset();
+
+        clienteEmEdicao = null;
+
+        btnCancelar.style.display = 'none';
       }
 
       const clientesAtualizados = await buscarClientes();
@@ -230,11 +236,12 @@ corpoTabelaClientes.addEventListener('click', async (evento) => {
 // ======================================
 
 const btnCancelar = document.getElementById('btn-cancelar');
+btnCancelar.style.display = 'none';
 
 if (btnCancelar) {
   btnCancelar.addEventListener('click', () => {
     clienteEmEdicao = null;
-
+    formCliente.reset();
     erroCliente.textContent = '';
 
     areaMensagens.textContent = 'Edição cancelada.';
