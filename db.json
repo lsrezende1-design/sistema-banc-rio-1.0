@@ -1,12 +1,6 @@
 {
   "clientes": [
     {
-      "nome": "liliab",
-      "cpf": "11111111115",
-      "email": "11111@ccc.ccc",
-      "id": 1
-    },
-    {
       "nome": "Fabyo",
       "cpf": "11122233355",
       "email": "Fabyo@gmail.com",
@@ -17,6 +11,12 @@
       "cpf": "22233344455",
       "email": "Werlleyn@gmail.com",
       "id": 3
+    },
+    {
+      "nome": "Wagner Rogerio",
+      "cpf": "22255533311",
+      "email": "Wagner@com.br",
+      "id": 4
     }
   ],
   "usuarios": [
