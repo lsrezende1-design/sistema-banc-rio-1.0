@@ -87,3 +87,53 @@ function renderizarClientes(clientes) {
     corpoTabelaClientes.appendChild(linha);
   });
 }
+
+// ======================================
+// PREENCHER SELECT DE CLIENTES EM CONTAS
+// ======================================
+function preencherSelectClientes(clientes) {
+  const selectCliente = document.getElementById('conta-cliente');
+  if (!selectCliente) return;
+
+  selectCliente.innerHTML = '<option value="">Selecione um cliente</option>';
+
+  clientes.forEach((cliente) => {
+    const option = document.createElement('option');
+    option.value = cliente.id;
+    option.textContent = `${cliente.nome} (CPF: ${cliente.cpf})`;
+    selectCliente.appendChild(option);
+  });
+}
+
+// ======================================
+// RENDERIZAR TABELA DE CONTAS
+// ======================================
+function renderizarContas(contas, clientes) {
+  const corpoTabelaContas = document.getElementById('tabela-contas-corpo');
+  if (!corpoTabelaContas) return;
+
+  corpoTabelaContas.innerHTML = '';
+
+  contas.forEach((conta) => {
+    const linha = document.createElement('tr');
+
+    // Busca o nome do cliente associado ao clienteId da conta
+    const cliente = clientes.find((c) => String(c.id) === String(conta.clienteId));
+    const nomeCliente = cliente ? cliente.nome : 'Cliente Não Encontrado';
+
+    linha.innerHTML = `
+      <td>${conta.numeroConta}</td>
+      <td>${nomeCliente}</td>
+      <td>${conta.tipo}</td>
+      <td>R$ ${Number(conta.saldo).toFixed(2).replace('.', ',')}</td>
+      <td><span style="color: green; font-weight: bold;">${conta.status || 'Ativa'}</span></td>
+      <td>
+        <button type="button" class="btn-acao btn-excluir" data-acao="deletar-conta" data-id="${conta.id}">
+          Excluir
+        </button>
+      </td>
+    `;
+
+    corpoTabelaContas.appendChild(linha);
+  });
+}

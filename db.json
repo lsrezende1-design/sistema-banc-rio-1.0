@@ -35,6 +35,23 @@
       "perfil": "caixa"
     }
   ],
-  "contas": [],
+  "contas": [
+    {
+      "clienteId": 2,
+      "numeroConta": "001-1001-9",
+      "tipo": "Corrente",
+      "saldo": 0,
+      "status": "Ativa",
+      "id": 1
+    },
+    {
+      "clienteId": 2,
+      "numeroConta": "013-1001-1",
+      "tipo": "Poupança",
+      "saldo": 0,
+      "status": "Ativa",
+      "id": 2
+    }
+  ],
   "transacoes": []
 }

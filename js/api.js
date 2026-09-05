@@ -100,3 +100,60 @@ async function deletarCliente(id) {
 
   return true;
 }
+
+// ======================================
+// CONTAS - API
+// ======================================
+
+// ======================================
+// BUSCAR TODAS AS CONTAS
+// GET /contas
+// ======================================
+
+async function buscarContas() {
+  const resposta = await fetch(`${API_URL}/contas`);
+
+  if (!resposta.ok) {
+    throw new Error('Erro ao buscar contas');
+  }
+
+  return await resposta.json();
+}
+
+// ======================================
+// CRIAR CONTAS
+// POST /contas
+// ======================================
+
+async function criarConta(conta) {
+  const resposta = await fetch(`${API_URL}/contas`, {
+    method: 'POST',
+
+    headers: { 'Content-Type': 'application/json' },
+    
+    body: JSON.stringify(conta),
+  });
+
+  if (!resposta.ok) {
+    throw new Error('Erro ao criar conta');
+  }
+
+  return await resposta.json();
+}
+
+// ======================================
+// DELETAR CONTAS
+// DELETE /contas/:id
+// ======================================
+
+async function deletarConta(id) {
+  const resposta = await fetch(`${API_URL}/contas/${id}`, {
+    method: 'DELETE',
+  });
+
+  if (!resposta.ok) {
+    throw new Error('Erro ao deletar conta');
+  }
+
+  return true;
+}

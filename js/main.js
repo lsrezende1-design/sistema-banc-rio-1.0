@@ -270,3 +270,4 @@ btnTema.addEventListener('click', () => {
   const temaAtual = document.body.classList.contains('dark') ? 'dark' : 'light';
   localStorage.setItem('tema', temaAtual);
 });
+
