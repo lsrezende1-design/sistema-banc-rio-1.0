@@ -2,23 +2,29 @@
 // REFERÊNCIA AO CORPO DA TABELA
 // ======================================
 
-const corpoTabelaClientes = document.getElementById('tabela-clientes-corpo');
+const corpoTabelaClientes = document.getElementById("tabela-clientes-corpo");
 
 // ======================================
 // RENDERIZAR CLIENTES
 // ======================================
 
+// Aplicar a máscara 000.000.000-00
+function formatarCPF(cpf) {
+  if (!cpf || cpf.length !== 11) return cpf;
+  return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+}
+
 function renderizarClientes(clientes) {
-  corpoTabelaClientes.innerHTML = '';
+  corpoTabelaClientes.innerHTML = "";
 
   clientes.forEach((cliente) => {
-    const linha = document.createElement('tr');
+    const linha = document.createElement("tr");
 
     // ==========================
     // NOME
     // ==========================
 
-    const tdNome = document.createElement('td');
+    const tdNome = document.createElement("td");
 
     tdNome.innerText = cliente.nome;
 
@@ -26,15 +32,15 @@ function renderizarClientes(clientes) {
     // CPF
     // ==========================
 
-    const tdCpf = document.createElement('td');
+    const tdCpf = document.createElement("td");
 
-    tdCpf.innerText = cliente.cpf;
+    tdCpf.innerText = formatarCPF(cliente.cpf);
 
     // ==========================
     // EMAIL
     // ==========================
 
-    const tdEmail = document.createElement('td');
+    const tdEmail = document.createElement("td");
 
     tdEmail.innerText = cliente.email;
 
@@ -42,39 +48,39 @@ function renderizarClientes(clientes) {
     // AÇÕES
     // ==========================
 
-    const tdAcoes = document.createElement('td');
+    const tdAcoes = document.createElement("td");
 
     // ==========================
     // BOTÃO EDITAR
     // ==========================
 
-    const botaoEditar = document.createElement('button');
+    const botaoEditar = document.createElement("button");
 
-    botaoEditar.type = 'button';
+    botaoEditar.type = "button";
 
-    botaoEditar.innerText = 'Editar';
+    botaoEditar.innerText = "Editar";
 
-    botaoEditar.dataset.acao = 'editar';
+    botaoEditar.dataset.acao = "editar";
 
     botaoEditar.dataset.id = cliente.id;
 
-    botaoEditar.className = 'btn-acao btn-editar';
+    botaoEditar.className = "btn-acao btn-editar";
 
     // ==========================
     // BOTÃO EXCLUIR
     // ==========================
 
-    const botaoExcluir = document.createElement('button');
+    const botaoExcluir = document.createElement("button");
 
-    botaoExcluir.type = 'button';
+    botaoExcluir.type = "button";
 
-    botaoExcluir.innerText = 'Excluir';
+    botaoExcluir.innerText = "Excluir";
 
-    botaoExcluir.dataset.acao = 'deletar';
+    botaoExcluir.dataset.acao = "deletar";
 
     botaoExcluir.dataset.id = cliente.id;
 
-    botaoExcluir.className = 'btn-acao btn-excluir';
+    botaoExcluir.className = "btn-acao btn-excluir";
 
     // ==========================
     // MONTAGEM
