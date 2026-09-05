@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-  if (!localStorage.getItem('usuarioLogado')) {
+document.addEventListener("DOMContentLoaded", () => {
+  if (!localStorage.getItem("usuarioLogado")) {
     return;
   }
 
@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let clienteEmEdicao = null;
 
-const formCliente = document.getElementById('form-cliente');
+const formCliente = document.getElementById("form-cliente");
 
-const areaMensagens = document.getElementById('area-mensagens');
+const areaMensagens = document.getElementById("area-mensagens");
 
-const erroCliente = document.getElementById('erro-cliente');
+const erroCliente = document.getElementById("erro-cliente");
 
 // ======================================
 // INICIAR
@@ -26,21 +26,21 @@ async function iniciar() {
 
     atualizarQuantidadeClientes(clientes);
   } catch (erro) {
-    areaMensagens.textContent = 'Erro ao carregar clientes.';
+    areaMensagens.textContent = "Erro ao carregar clientes.";
   }
 }
 //======================================
 // FILTRO POR NOME (VIA API)
 // ======================================
 
-const filtroClienteNome = document.getElementById('filtro-cliente-nome');
+const filtroClienteNome = document.getElementById("filtro-cliente-nome");
 
-filtroClienteNome.addEventListener('input', async () => {
+filtroClienteNome.addEventListener("input", async () => {
   const termo = filtroClienteNome.value.toLowerCase();
   const clientes = await buscarClientes();
 
   const clientesFiltrados = clientes.filter((cliente) =>
-    cliente.nome.toLowerCase().includes(termo)
+    cliente.nome.toLowerCase().includes(termo),
   );
 
   renderizarClientes(clientesFiltrados);
@@ -50,7 +50,7 @@ filtroClienteNome.addEventListener('input', async () => {
 // ======================================
 
 function atualizarQuantidadeClientes(clientes) {
-  const contador = document.getElementById('quantidade-clientes');
+  const contador = document.getElementById("quantidade-clientes");
 
   if (!contador) {
     return;
@@ -63,24 +63,24 @@ function atualizarQuantidadeClientes(clientes) {
 // SALVAR CLIENTE
 // ======================================
 
-formCliente.addEventListener('submit', async (evento) => {
+formCliente.addEventListener("submit", async (evento) => {
   evento.preventDefault();
 
-  areaMensagens.textContent = '';
-  erroCliente.textContent = '';
+  areaMensagens.textContent = "";
+  erroCliente.textContent = "";
 
   const cliente = {
-    nome: document.getElementById('cliente-nome').value.trim(),
+    nome: document.getElementById("cliente-nome").value.trim(),
 
-    cpf: document.getElementById('cliente-cpf').value.trim(),
+    cpf: document.getElementById("cliente-cpf").value.trim(),
 
-    email: document.getElementById('cliente-email').value.trim(),
+    email: document.getElementById("cliente-email").value.trim().toLowerCase(),
   };
 
   const erros = validarCliente(cliente);
 
   if (Object.keys(erros).length > 0) {
-    erroCliente.textContent = Object.values(erros).join(' ');
+    erroCliente.textContent = Object.values(erros).join(" ");
 
     return;
   }
@@ -93,11 +93,11 @@ formCliente.addEventListener('submit', async (evento) => {
     // ======================
 
     const cpfExiste = clientes.some(
-      (item) => item.cpf === cliente.cpf && item.id !== clienteEmEdicao
+      (item) => item.cpf === cliente.cpf && item.id !== clienteEmEdicao,
     );
 
     if (cpfExiste) {
-      erroCliente.textContent = 'CPF já cadastrado.';
+      erroCliente.textContent = "CPF já cadastrado.";
 
       return;
     }
@@ -107,11 +107,11 @@ formCliente.addEventListener('submit', async (evento) => {
     // ======================
 
     const emailExiste = clientes.some(
-      (item) => item.email === cliente.email && item.id !== clienteEmEdicao
+      (item) => item.email === cliente.email && item.id !== clienteEmEdicao,
     );
 
     if (emailExiste) {
-      erroCliente.textContent = 'Email já cadastrado.';
+      erroCliente.textContent = "Email já cadastrado.";
 
       return;
     }
@@ -123,7 +123,7 @@ formCliente.addEventListener('submit', async (evento) => {
     if (clienteEmEdicao !== null) {
       await atualizarCliente(clienteEmEdicao, cliente);
 
-      areaMensagens.textContent = 'Cliente atualizado com sucesso.';
+      areaMensagens.textContent = "Cliente atualizado com sucesso.";
     }
 
     // ======================
@@ -132,7 +132,7 @@ formCliente.addEventListener('submit', async (evento) => {
     else {
       await criarCliente(cliente);
 
-      areaMensagens.textContent = 'Cliente criado com sucesso.';
+      areaMensagens.textContent = "Cliente criado com sucesso.";
     }
 
     formCliente.reset();
@@ -145,7 +145,7 @@ formCliente.addEventListener('submit', async (evento) => {
 
     atualizarQuantidadeClientes(clientesAtualizados);
   } catch (erro) {
-    areaMensagens.textContent = 'Erro ao salvar cliente.';
+    areaMensagens.textContent = "Erro ao salvar cliente.";
   }
 });
 
@@ -153,7 +153,7 @@ formCliente.addEventListener('submit', async (evento) => {
 // EDITAR E DELETAR
 // ======================================
 
-corpoTabelaClientes.addEventListener('click', async (evento) => {
+corpoTabelaClientes.addEventListener("click", async (evento) => {
   const alvo = evento.target;
 
   if (!alvo.dataset.acao) {
@@ -166,7 +166,7 @@ corpoTabelaClientes.addEventListener('click', async (evento) => {
   // EDITAR
   // ------------------------------
 
-  if (alvo.dataset.acao === 'editar') {
+  if (alvo.dataset.acao === "editar") {
     try {
       const cliente = await buscarClientePorId(id);
 
@@ -176,19 +176,19 @@ corpoTabelaClientes.addEventListener('click', async (evento) => {
 
       clienteEmEdicao = cliente.id;
 
-      btnCancelar.style.display = 'inline-block';
+      btnCancelar.style.display = "inline-block";
 
-      document.getElementById('cliente-nome').value = cliente.nome;
+      document.getElementById("cliente-nome").value = cliente.nome;
 
-      document.getElementById('cliente-cpf').value = cliente.cpf;
+      document.getElementById("cliente-cpf").value = cliente.cpf;
 
-      document.getElementById('cliente-email').value = cliente.email;
+      document.getElementById("cliente-email").value = cliente.email;
 
       areaMensagens.textContent = `Editando cliente: ${cliente.nome}`;
 
-      erroCliente.textContent = '';
+      erroCliente.textContent = "";
     } catch (erro) {
-      areaMensagens.textContent = 'Erro ao carregar cliente.';
+      areaMensagens.textContent = "Erro ao carregar cliente.";
     }
   }
 
@@ -196,8 +196,8 @@ corpoTabelaClientes.addEventListener('click', async (evento) => {
   // DELETAR
   // ------------------------------
 
-  if (alvo.dataset.acao === 'deletar') {
-    const confirmou = confirm('Tem certeza que deseja deletar este cliente?');
+  if (alvo.dataset.acao === "deletar") {
+    const confirmou = confirm("Tem certeza que deseja deletar este cliente?");
 
     if (!confirmou) {
       return;
@@ -206,9 +206,9 @@ corpoTabelaClientes.addEventListener('click', async (evento) => {
     try {
       await deletarCliente(id);
 
-      areaMensagens.textContent = 'Cliente deletado com sucesso.';
+      areaMensagens.textContent = "Cliente deletado com sucesso.";
 
-      erroCliente.textContent = '';
+      erroCliente.textContent = "";
 
       if (clienteEmEdicao === id) {
         clienteEmEdicao = null;
@@ -217,7 +217,7 @@ corpoTabelaClientes.addEventListener('click', async (evento) => {
 
         clienteEmEdicao = null;
 
-        btnCancelar.style.display = 'none';
+        btnCancelar.style.display = "none";
       }
 
       const clientesAtualizados = await buscarClientes();
@@ -226,7 +226,7 @@ corpoTabelaClientes.addEventListener('click', async (evento) => {
 
       atualizarQuantidadeClientes(clientesAtualizados);
     } catch (erro) {
-      areaMensagens.textContent = 'Erro ao deletar cliente.';
+      areaMensagens.textContent = "Erro ao deletar cliente.";
     }
   }
 });
@@ -235,16 +235,16 @@ corpoTabelaClientes.addEventListener('click', async (evento) => {
 // CANCELAR EDIÇÃO
 // ======================================
 
-const btnCancelar = document.getElementById('btn-cancelar');
-btnCancelar.style.display = 'none';
+const btnCancelar = document.getElementById("btn-cancelar");
+btnCancelar.style.display = "none";
 
 if (btnCancelar) {
-  btnCancelar.addEventListener('click', () => {
+  btnCancelar.addEventListener("click", () => {
     clienteEmEdicao = null;
     formCliente.reset();
-    erroCliente.textContent = '';
+    erroCliente.textContent = "";
 
-    areaMensagens.textContent = 'Edição cancelada.';
+    areaMensagens.textContent = "Edição cancelada.";
   });
 }
 
@@ -252,21 +252,23 @@ if (btnCancelar) {
 //          ALTERNAR TEMA
 // ---------------------------------
 
-// Captura a referência do botão no HTML
-const btnTema = document.getElementById('btn-tema');
-
-// 1. Aplica o tema salvo assim que o script carrega (evita "piscada" ao abrir a página)
-const temaSalvo = localStorage.getItem('tema');
-if (temaSalvo === 'dark') {
-  document.body.classList.add('dark');
+// 1. Aplica o tema salvo imediatamente
+const temaSalvo = localStorage.getItem("tema");
+if (temaSalvo === "dark") {
+  document.body.classList.add("dark");
 }
 
-// 2. Escuta o clique no botão para alternar e salvar o tema
-btnTema.addEventListener('click', () => {
-  // Alterna a classe 'dark' no <body>
-  document.body.classList.toggle('dark');
+// 2. Aguarda a montagem completa da página HTML
+document.addEventListener("DOMContentLoaded", () => {
+  const btnTema = document.getElementById("btn-tema");
 
-  // Verifica se o tema escuro está ativo e grava a preferência no localStorage
-  const temaAtual = document.body.classList.contains('dark') ? 'dark' : 'light';
-  localStorage.setItem('tema', temaAtual);
+  if (btnTema) {
+    btnTema.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const temaAtual = document.body.classList.contains("dark")
+        ? "dark"
+        : "light";
+      localStorage.setItem("tema", temaAtual);
+    });
+  }
 });

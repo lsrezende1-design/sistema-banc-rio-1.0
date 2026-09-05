@@ -2,21 +2,33 @@
   "clientes": [
     {
       "nome": "Fabyo",
-      "cpf": "11122233355",
-      "email": "Fabyo@gmail.com",
+      "cpf": "11111111111",
+      "email": "fabyo@gmail.com.br",
       "id": 2
     },
     {
       "nome": "Werlleyn",
       "cpf": "22233344455",
-      "email": "Werlleyn@gmail.com",
+      "email": "werlleyn@gmail.com",
       "id": 3
     },
     {
       "nome": "Wagner Rogerio",
-      "cpf": "22255533311",
-      "email": "Wagner@com.br",
+      "cpf": "22222222222",
+      "email": "wagner@com.br",
       "id": 4
+    },
+    {
+      "nome": "Pedro Augusto",
+      "cpf": "12345678910",
+      "email": "p@p",
+      "id": 5
+    },
+    {
+      "nome": "Josefa Barbosa",
+      "cpf": "98765465400",
+      "email": "josefabarbosa@email.com",
+      "id": 6
     }
   ],
   "usuarios": [
