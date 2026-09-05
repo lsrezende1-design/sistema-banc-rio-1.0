@@ -2,25 +2,21 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Sistema Bancário #1727</title>
 
     <script src="js/api.js" defer></script>
     <script src="js/validacao.js" defer></script>
     <script src="js/ui.js" defer></script>
-    <script src="js/main.js" defer></script>
     <script src="js/auth.js"></script>
-<link href="style.css" rel="stylesheet" />
-   
+    <script src="js/transacoes.js" defer></script>
+
+    <link href="style.css" rel="stylesheet" />
+
     <script>
       protegerPagina();
       carregarBoasVindas();
-
     </script>
-
-    <link rel="stylesheet" href="styles/style.css" />
   </head>
 
   <body>
@@ -52,7 +48,6 @@
           >
             Transações
           </button>
-
           <button
             type="button"
             class="btn"
@@ -69,82 +64,93 @@
         <main id="main">
           <!-- Navbar -->
           <div class="navbar">
-            
             <p id="boasVindas"></p>
             <button id="btn-tema" type="button">Alternar Tema</button>
           </div>
         </main>
 
-         <section id="box1">
-        
-        <article class="card">
-          <h2>Transações</h2>
-        
+        <!-- Área para mensagens do sistema -->
+        <div id="area-mensagens" role="alert"></div>
 
-      <form id="form-conta">
-          <label for="transacao-conta">Conta</label>
+        <section id="box1">
+          <article class="card">
+            <h2>Transações</h2>
 
-          <select id="transacao-conta" required>
-            <option value="">Selecione uma conta</option>
-          </select>
+            <form id="form-transacao">
+              <!-- Opção 1: Selecionar Conta Cadastrada -->
+              <label for="transacao-conta">Conta (Seleção)</label>
+              <select id="transacao-conta">
+                <option value="">Selecione uma conta</option>
+              </select>
 
-          <label for="transacao-tipo">Tipo</label>
+              <!-- Opção 2: Ou digite os dados da conta manualmente -->
+              <div class="campos-linha-tripla">
+                <div>
+                  <label for="transacao-tipo-conta">Tipo</label>
+                  <select id="transacao-tipo-conta">
+                    <option value="">Selecione...</option>
+                    <option value="Corrente">Corrente</option>
+                    <option value="Poupança">Poupança</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="transacao-numero-conta">Número</label>
+                  <input type="text" id="transacao-numero-conta" placeholder="Ex: 12345" />
+                </div>
+                <div>
+                  <label for="transacao-digito-conta">Dígito</label>
+                  <input type="text" id="transacao-digito-conta" maxlength="2" placeholder="0" />
+                </div>
+              </div>
 
-          <select id="transacao-tipo">
-            <option value="Depósito">Depósito</option>
+              <!-- Tipo de Transação -->
+              <label for="transacao-tipo">Operação</label>
+              <select id="transacao-tipo" required>
+                <option value="Depósito">Depósito</option>
+                <option value="Saque">Saque</option>
+              </select>
 
-            <option value="Saque">Saque</option>
-          </select>
+              <!-- Valor com máscara de moeda -->
+              <label for="transacao-valor">Valor (R$)</label>
+              <input
+                type="text"
+                id="transacao-valor"
+                placeholder="R$ 0,00"
+                required
+              />
 
-          <label for="transacao-valor">Valor</label>
+              <p id="erro-transacao" role="alert"></p>
 
-          <input
-            type="number"
-            id="transacao-valor"
-            min="0.01"
-            step="0.01"
-            required
-          />
+              <button type="submit">Registrar Operação</button>
+            </form>
+          </article>
 
-          <div id="erro-transacao" role="alert"></div>
+          <!-- Histórico de Transações -->
+          <article class="card">
+            <h3>Histórico</h3>
+            <table id="tabela-transacoes">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Tipo</th>
+                  <th>Valor</th>
+                  <th>Saldo Novo</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-transacoes-corpo"></tbody>
+            </table>
+          </article>
 
-          <button type="submit">Registrar</button>
-        </form>
-</article>
-
-<article class="card">
-        <h3>Histórico</h3>
-        
-
-
-
-        <table id="tabela-transacoes">
-          <thead>
-            <tr>
-              <th>Data</th>
-              <th>Tipo</th>
-              <th>Valor</th>
-              <th>Saldo Novo</th>
-            </tr>
-          </thead>
-
-          <tbody id="tabela-transacoes-corpo">
-            <!--
-            As linhas relacionadas às trasações são criadas pelo ui.js.
-          --></tbody>
-        </table>
-</article>
-       <article class="card">
-        <div id="paginacao-transacoes">
-          <button type="button" id="btn-pagina-anterior">Anterior</button>
-
-          <span id="pagina-atual-info"></span>
-
-          <button type="button" id="btn-pagina-proxima">Próxima</button>
-        </div>
-        </article>
-      </section>
-
+          <!-- Paginação -->
+          <article class="card">
+            <div id="paginacao-transacoes" class="paginacao-container">
+              <button type="button" id="btn-pagina-anterior">Anterior</button>
+              <span id="pagina-atual-info">Página 1</span>
+              <button type="button" id="btn-pagina-proxima">Próxima</button>
+            </div>
+          </article>
+        </section>
       </div>
+    </div>
   </body>
 </html>

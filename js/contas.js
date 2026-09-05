@@ -163,3 +163,46 @@ if (tabelaContasCorpo) {
     }
   });
 }
+
+// ======================================
+// FILTRAR CONTAS (NOME DO CLIENTE E/OU NÚMERO DA CONTA)
+// ======================================
+
+const filtroContaNome = document.getElementById("filtro-conta-nome");
+const filtroContaNumero = document.getElementById("filtro-conta-numero");
+
+async function aplicarFiltroContas() {
+  try {
+    const termoNome = filtroContaNome ? filtroContaNome.value.toLowerCase().trim() : "";
+    const termoNumero = filtroContaNumero ? filtroContaNumero.value.toLowerCase().trim() : "";
+
+    // Busca dados atualizados da API
+    const [contas, clientes] = await Promise.all([buscarContas(), buscarClientes()]);
+
+    const contasFiltradas = contas.filter((conta) => {
+      // Identifica o cliente associado à conta
+      const cliente = clientes.find((c) => String(c.id) === String(conta.clienteId));
+      const nomeCliente = cliente ? cliente.nome.toLowerCase() : "";
+      const numeroConta = String(conta.numeroConta).toLowerCase();
+
+      // Verifica se atende a ambos os campos preenchidos
+      const atendeNome = nomeCliente.includes(termoNome);
+      const atendeNumero = numeroConta.includes(termoNumero);
+
+      return atendeNome && atendeNumero;
+    });
+
+    renderizarContas(contasFiltradas, clientes);
+  } catch (erro) {
+    console.error("Erro ao aplicar filtro nas contas:", erro);
+  }
+}
+
+// Eventos de escuta nos campos de busca
+if (filtroContaNome) {
+  filtroContaNome.addEventListener("input", aplicarFiltroContas);
+}
+
+if (filtroContaNumero) {
+  filtroContaNumero.addEventListener("input", aplicarFiltroContas);
+}

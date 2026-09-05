@@ -56,13 +56,9 @@ body {
   padding: 12px;
   border: none;
   border-radius: 6px;
-
   background-color: #f8f9fa;
-
   cursor: pointer;
-
   font-size: 15px;
-
   transition: 0.2s;
 }
 
@@ -86,13 +82,9 @@ body {
 
 #main {
   background-color: rgb(192, 192, 211);
-
   color: white;
-
   padding: 20px;
-
   border-radius: 8px;
-
   margin-bottom: 20px;
 }
 
@@ -103,7 +95,7 @@ body {
 }
 
 /* ====================================== */
-/* BOX CLIENTES */
+/* BOX DE CONTEÚDO (CLIENTES / CONTAS) */
 /* ====================================== */
 
 #box1 {
@@ -118,7 +110,7 @@ body {
 }
 
 /* ====================================== */
-/* CARDS INTERNOS */
+/* CARDS E FORMULÁRIOS INTERNOS */
 /* ====================================== */
 
 .card {
@@ -129,7 +121,8 @@ body {
   margin-bottom: 20px;
 }
 
-#form-cliente {
+#form-cliente,
+#form-conta {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -138,11 +131,14 @@ body {
 #form-cliente input,
 #form-conta input,
 #form-conta select,
-#filtro-cliente-nome {
+#filtro-cliente-nome,
+.card-filtros input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   width: 100%;
+  background-color: #fff;
+  font-size: 14px;
 }
 
 #form-cliente button,
@@ -152,7 +148,38 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  background-color: #e9ecef;
+  font-size: 14px;
+  transition: 0.2s;
 }
+
+#form-cliente button:hover,
+#form-conta button:hover {
+  background-color: #ddd;
+}
+
+.saldo-info {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Estilo para os cards de filtros */
+.card-filtros {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* ====================================== */
+/* TABELAS */
+/* ====================================== */
 
 table {
   width: 100%;
@@ -173,9 +200,11 @@ th {
 tr:nth-child(even) {
   background-color: #fafafa;
 }
+
 #btn-cancelar {
   display: none;
 }
+
 /* ====================================== */
 /* RESPONSIVIDADE */
 /* ====================================== */
@@ -204,11 +233,6 @@ tr:nth-child(even) {
     gap: 15px;
   }
 
-  #loginForm {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
   table {
     display: block;
     overflow-x: auto;
@@ -220,17 +244,6 @@ tr:nth-child(even) {
     flex: 1 1 100%;
   }
 
-  #loginForm {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  #loginForm input,
-  #loginForm button {
-    width: 100%;
-  }
-
   #btn-tema {
     width: fit-content;
     margin-left: auto;
@@ -240,5 +253,72 @@ tr:nth-child(even) {
   td {
     font-size: 14px;
     padding: 8px;
+  }
+}
+
+/* ====================================== */
+/* TRANSAÇÕES E FORMULÁRIOS ESPECÍFICOS */
+/* ====================================== */
+
+#form-transacao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#form-transacao input,
+#form-transacao select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+#form-transacao button[type="submit"] {
+  margin-top: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #e9ecef;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+#form-transacao button[type="submit"]:hover {
+  background-color: #ddd;
+}
+
+/* Tres campos na mesma linha (Tipo, Número e Dígito) */
+.campos-linha-tripla {
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px;
+  gap: 10px;
+}
+
+/* Container de paginação */
+.paginacao-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.paginacao-container button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.paginacao-container button:hover {
+  background-color: #eee;
+}
+
+@media (max-width: 600px) {
+  .campos-linha-tripla {
+    grid-template-columns: 1fr;
   }
 }

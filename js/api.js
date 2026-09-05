@@ -130,7 +130,7 @@ async function criarConta(conta) {
     method: 'POST',
 
     headers: { 'Content-Type': 'application/json' },
-    
+
     body: JSON.stringify(conta),
   });
 
@@ -156,4 +156,46 @@ async function deletarConta(id) {
   }
 
   return true;
+}
+
+// ======================================
+// TRANSAÇÕES & SALDO - API
+// ======================================
+
+async function atualizarSaldoConta(contaId, novoSaldo) {
+  const resposta = await fetch(`${API_URL}/contas/${contaId}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ saldo: novoSaldo }),
+  });
+
+  if (!resposta.ok) {
+    throw new Error('Erro ao atualizar saldo da conta');
+  }
+
+  return await resposta.json();
+}
+
+async function criarTransacao(transacao) {
+  const resposta = await fetch(`${API_URL}/transacoes`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(transacao),
+  });
+
+  if (!resposta.ok) {
+    throw new Error('Erro ao registrar transação');
+  }
+
+  return await resposta.json();
+}
+
+async function buscarTransacoesPorConta(contaId) {
+  const resposta = await fetch(`${API_URL}/transacoes?contaId=${contaId}`);
+
+  if (!resposta.ok) {
+    throw new Error('Erro ao buscar transações');
+  }
+
+  return await resposta.json();
 }

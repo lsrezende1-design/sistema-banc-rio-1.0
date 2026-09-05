@@ -2,25 +2,21 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Sistema Bancário #1727</title>
 
     <script src="js/api.js" defer></script>
     <script src="js/validacao.js" defer></script>
     <script src="js/ui.js" defer></script>
-    <script src="js/main.js" defer></script>
     <script src="js/auth.js"></script>
     <script src="js/contas.js" defer></script>
+    
     <link href="style.css" rel="stylesheet" />
 
     <script>
       protegerPagina();
       carregarBoasVindas();
     </script>
-
-    <link rel="stylesheet" href="styles/style.css" />
   </head>
 
   <body>
@@ -75,45 +71,50 @@
           </div>
         </main>
 
-        <!--
-      Área utilizada para mensagens gerais de sucesso ou erro.
-    -->
+        <!-- Área utilizada para mensagens gerais de sucesso ou erro -->
         <div id="area-mensagens" role="alert"></div>
 
         <!-- ========================================= -->
-        <!-- CLIENTES                                  -->
+        <!-- CONTAS                                    -->
         <!-- ========================================= -->
-
         <section id="box1">
-          <h2>Contas</h2>
-
-          <!--
-        Estrutura preparada para o MÓDULO CONTAS
-      -->
           <article class="card">
+            <h2>Contas</h2>
+
             <form id="form-conta">
               <label for="conta-cliente">Cliente</label>
-
               <select id="conta-cliente" required>
                 <option value="">Selecione um cliente</option>
               </select>
 
-              <div id="erro-conta" role="alert"></div>
-
               <label for="conta-tipo">Tipo</label>
-
               <select id="conta-tipo">
                 <option value="Corrente">Corrente</option>
-
                 <option value="Poupança">Poupança</option>
               </select>
 
-              <p>Saldo inicial: R$ 0,00</p>
+              <p class="saldo-info">Saldo inicial: R$ 0,00</p>
+
+              <p id="erro-conta" role="alert"></p>
 
               <button type="submit">Salvar Conta</button>
             </form>
           </article>
 
+          <!-- FILTROS DE BUSCA (NOME E NÚMERO DA CONTA) -->
+          <article class="card card-filtros">
+            <div class="filtro-grupo">
+              <label for="filtro-conta-nome">Buscar por nome do cliente</label>
+              <input type="search" id="filtro-conta-nome" placeholder="Digite o nome do cliente..." />
+            </div>
+
+            <div class="filtro-grupo">
+              <label for="filtro-conta-numero">Buscar por número da conta</label>
+              <input type="search" id="filtro-conta-numero" placeholder="Digite o número da conta..." />
+            </div>
+          </article>
+
+          <!-- TABELA DE CONTAS -->
           <article class="card">
             <table id="tabela-contas">
               <thead>
@@ -126,11 +127,7 @@
                   <th>Ações</th>
                 </tr>
               </thead>
-              <tbody id="tabela-contas-corpo">
-                <!--
-            As linhas dos clientes/Contas são criadas pelo ui.js.
-          -->
-              </tbody>
+              <tbody id="tabela-contas-corpo"></tbody>
             </table>
           </article>
         </section>

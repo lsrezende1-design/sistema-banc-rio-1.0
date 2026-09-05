@@ -111,6 +111,14 @@
       "saldoResultante": 500,
       "data": "05/09/2026, 18:00:24",
       "id": 3
+    },
+    {
+      "contaId": 4,
+      "tipo": "Saque",
+      "valor": 100,
+      "saldoResultante": 400,
+      "data": "05/09/2026, 18:01:02",
+      "id": 4
     }
   ]
 }
