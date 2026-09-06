@@ -143,23 +143,23 @@ O sistema permite que funcionários gerenciem clientes, abram e administrem cont
 
 ```text
 sistema-banc-rio-1.0/
-├── index.html # Tela de login e dashboard inicial
-├── clientes.html # Interface de gestão e cadastro de clientes
-├── contas.html # Interface de gestão e abertura de contas
-├── transacoes.html # Interface para saques, depósitos e histórico
+├── index.html                # Tela de login e dashboard inicial
+├── clientes.html             # Interface de gestão e cadastro de clientes
+├── contas.html               # Interface de gestão e abertura de contas
+├── transacoes.html           # Interface para saques, depósitos e histórico
 ├── css/
-│ └── style.css # Estilização global, temas e layout responsivo
+│   └── style.css             # Estilização global, temas e layout responsivo
 ├── js/
-│ ├── api.js # Comunicação assíncrona com a API (Fetch)
-│ ├── auth.js # Gestão de sessão, login/logout e proteção de rotas
-│ ├── main.js # Lógica de controle e eventos da tela de clientes
-│ ├── contas.js # Lógica do módulo de contas e cálculo de Módulo 11
-│ ├── transacoes.js # Lógica de saques, depósitos, regras de saldo e paginação
-│ ├── ui.js # Manipulação do DOM e renderização visual
-│ ├── validacao.js # Validadores de CPF, e-mail e dados de formulário
-│ └── alternarTema.js # Controle do modo claro/escuro
-├── db.json # Banco de dados mock (clientes, contas, transações e usuários)
-└── README.md # Documentação do projeto
+│   ├── api.js                # Comunicação assíncrona com a API (Fetch)
+│   ├── auth.js               # Gestão de sessão, login/logout e proteção de rotas
+│   ├── main.js               # Lógica de controle e eventos da tela de clientes
+│   ├── contas.js             # Lógica do módulo de contas e cálculo de Módulo 11
+│   ├── transacoes.js         # Lógica de saques, depósitos, regras de saldo e paginação
+│   ├── ui.js                 # Manipulação do DOM e renderização visual
+│   ├── validacao.js          # Validadores de CPF, e-mail e dados de formulário
+│   └── alternarTema.js       # Controle do modo claro/escuro
+├── db.json                   # Banco de dados mock (clientes, contas, transações e usuários)
+└── README.md                 # Documentação do projeto
 
 ---
 
