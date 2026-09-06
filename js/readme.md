@@ -141,6 +141,7 @@ O sistema permite que funcionários gerenciem clientes, abram e administrem cont
 
 ## Estrutura do Projeto
 
+```text
 sistema-banc-rio-1.0/
 ├── index.html # Tela de login e dashboard inicial
 ├── clientes.html # Interface de gestão e cadastro de clientes
@@ -193,3 +194,4 @@ Abra o arquivo `index.html` em qualquer navegador web moderno ou utilize uma ext
 - Lilian Siqueira Rezende
 - Wagner Rogério Cruz
 - Werlleyn Douglas
+```
