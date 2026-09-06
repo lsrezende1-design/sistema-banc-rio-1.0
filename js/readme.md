@@ -161,7 +161,7 @@ sistema-banc-rio-1.0/
 ├── db.json                   # Banco de dados mock (clientes, contas, transações e usuários)
 └── README.md                 # Documentação do projeto
 
----
+```
 
 ## Como Executar o Projeto
 
@@ -194,4 +194,7 @@ Abra o arquivo `index.html` em qualquer navegador web moderno ou utilize uma ext
 - Lilian Siqueira Rezende
 - Wagner Rogério Cruz
 - Werlleyn Douglas
+
+```
+
 ```
