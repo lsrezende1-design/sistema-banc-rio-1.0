@@ -137,7 +137,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 6px;
   width: 100%;
-  background-color: #fff;
+  background-color: #a49f9f;
   font-size: 14px;
 }
 
@@ -148,14 +148,14 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  background-color: #e9ecef;
+  background-color: #ccc;
   font-size: 14px;
   transition: 0.2s;
 }
 
 #form-cliente button:hover,
 #form-conta button:hover {
-  background-color: #ddd;
+  background-color: #ccc;
 }
 
 .saldo-info {
@@ -194,11 +194,11 @@ td {
 }
 
 th {
-  background-color: #f1f1f1;
+  background-color: #ccc;
 }
 
 tr:nth-child(even) {
-  background-color: #fafafa;
+  background-color: #ccc;
 }
 
 #btn-cancelar {
@@ -272,23 +272,23 @@ tr:nth-child(even) {
   border: 1px solid #ccc;
   border-radius: 6px;
   width: 100%;
-  background-color: #fff;
+  background-color: #ccc;
   font-size: 14px;
 }
 
-#form-transacao button[type="submit"] {
+#form-transacao button[type='submit'] {
   margin-top: 5px;
   padding: 10px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  background-color: #e9ecef;
+  background-color: #ccc;
   font-size: 14px;
   transition: 0.2s;
 }
 
-#form-transacao button[type="submit"]:hover {
-  background-color: #ddd;
+#form-transacao button[type='submit']:hover {
+  background-color: #ccc;
 }
 
 /* Tres campos na mesma linha (Tipo, Número e Dígito) */
