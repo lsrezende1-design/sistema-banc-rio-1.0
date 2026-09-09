@@ -247,29 +247,3 @@ if (btnCancelar) {
     areaMensagens.textContent = "Edição cancelada.";
   });
 }
-
-// ---------------------------------
-//          ALTERNAR TEMA
-// ---------------------------------
-
-// 1. Aplica o tema salvo imediatamente
-const temaSalvo = localStorage.getItem("tema");
-if (temaSalvo === "dark") {
-  document.body.classList.add("dark");
-}
-
-// 2. Aguarda a montagem completa da página HTML
-document.addEventListener("DOMContentLoaded", () => {
-  const btnTema = document.getElementById("btn-tema");
-
-  if (btnTema) {
-    btnTema.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      const temaAtual = document.body.classList.contains("dark")
-        ? "dark"
-        : "light";
-      localStorage.setItem("tema", temaAtual);
-    });
-  }
-});
-

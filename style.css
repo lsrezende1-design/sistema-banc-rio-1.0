@@ -322,3 +322,173 @@ tr:nth-child(even) {
     grid-template-columns: 1fr;
   }
 }
+
+/* ====================================== */
+/*          AJUSTE NOS BOTÕES             */
+/* ====================================== */
+
+/* ====================================== */
+/* AJUSTES NOS BOTÕES (EDITAR, EXCLUIR E TEMA) */
+/* ====================================== */
+
+/* Estilo geral para botões de ação nas tabelas/cards (Editar e Excluir) */
+.btn-editar,
+.btn-excluir {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease,
+    opacity 0.2s ease;
+}
+
+/* Espaçamento entre os botões quando estiverem juntos */
+.btn-editar {
+  margin-right: 6px;
+}
+
+/* Efeitos de Hover e Clique para Editar/Excluir */
+.btn-editar:hover,
+.btn-excluir:hover {
+  opacity: 0.85;
+}
+
+.btn-editar:active,
+.btn-excluir:active,
+#btn-tema:active {
+  transform: scale(0.96);
+}
+
+/* Botão Alternar Tema */
+#btn-tema {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 4px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease,
+    opacity 0.2s ease;
+}
+
+#btn-tema:hover {
+  opacity: 0.85;
+}
+
+/* Ajuste para que os botões de ação não quebrem linha nas tabelas */
+td .btn-editar,
+td .btn-excluir {
+  white-space: nowrap;
+}
+
+/* =======================================*/
+/*              TEMA ESCURO               */
+/* =======================================*/
+body.dark {
+  background-color: #0b132b;
+  color: #e0e6ed;
+}
+/* =======================================*/
+/*                  SIDEBAR               */
+/* =======================================*/
+body.dark #sidebar {
+  background-color: #070d1f;
+  color: #ffffff;
+}
+/* =======================================*/
+/*          CONTEÚDO PRINCIPAL           */
+/* =======================================*/
+body.dark #main {
+  background-color: #1c2541;
+  color: #ffffff;
+}
+/* =======================================*/
+/*              BOX PRINCIPAL             */
+/* =======================================*/
+body.dark #box1,
+body.dark #Box {
+  background-color: #151e3d;
+  color: #e0e6ed;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2a3a5e;
+}
+/* =======================================*/
+/*                  CARDS                 */
+/* =======================================*/
+body.dark .card {
+  background-color: #1c2541;
+  color: #e0e6ed;
+  border: 1px solid #2a3a5e;
+}
+/* =======================================*/
+/*                 TABELAS                */
+/* =======================================*/
+body.dark table {
+  background-color: #1c2541;
+  color: #e0e6ed;
+}
+body.dark th {
+  background-color: #070d1f;
+  color: #ff7b00;
+}
+body.dark td {
+  border-color: #2a3a5e;
+}
+body.dark tr:nth-child(even) {
+  background-color: #151e3d;
+}
+/* =======================================*/
+/*           INPUTS E SELECTS             */
+/* =======================================*/
+body.dark input,
+body.dark select {
+  background-color: #0b132b;
+  color: #ffffff;
+  border: 1px solid #2a3a5e;
+}
+body.dark input::placeholder {
+  color: #8d99ae;
+}
+/* =======================================*/
+/*                  BOTÕES                */
+/* =======================================*/
+body.dark .btn {
+  background-color: #2a3a5e;
+  color: #ffffff;
+}
+body.dark .btn:hover {
+  background-color: #ff7b00;
+}
+/* =======================================*/
+/*              BOTÃO DE TEMA             */
+/* =======================================*/
+body.dark #btn-tema {
+  background-color: #ff7b00;
+  color: #ffffff;
+}
+/* =======================================*/
+/*                MENSAGENS               */
+/* =======================================*/
+body.dark #area-mensagens,
+body.dark #erro-cliente,
+body.dark #erro-conta,
+body.dark #erro-transacao {
+  color: #ffb703;
+}
+/* =======================================*/
+/*          TEXTO DE BOAS-VINDAS          */
+/* =======================================*/
+body.dark #boasVindas,
+body.dark #usuarioLogado {
+  color: #ff7b00;
+}
