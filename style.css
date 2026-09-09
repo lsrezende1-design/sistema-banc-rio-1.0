@@ -134,10 +134,10 @@ body {
 #filtro-cliente-nome,
 .card-filtros input {
   padding: 10px;
-  border: 1px solid #f4f4f4;
+  border: 1px solid #fafafa;
   border-radius: 6px;
   width: 100%;
-  background-color: #a49f9f;
+  background-color: #fff;
   font-size: 14px;
 }
 
@@ -148,14 +148,14 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  background-color: #f4f4f4;
+  background-color: #e9ecef;
   font-size: 14px;
   transition: 0.2s;
 }
 
 #form-cliente button:hover,
 #form-conta button:hover {
-  background-color: #f4f4f4;
+  background-color: #ddd;
 }
 
 .saldo-info {
@@ -194,11 +194,11 @@ td {
 }
 
 th {
-  background-color: #f4f4f4;
+  background-color: #f1f1f1;
 }
 
 tr:nth-child(even) {
-  background-color: #f4f4f4;
+  background-color: #fafafa;
 }
 
 #btn-cancelar {
@@ -269,10 +269,10 @@ tr:nth-child(even) {
 #form-transacao input,
 #form-transacao select {
   padding: 10px;
-  border: 1px solid #f4f4f4;
+  border: 1px solid #ccc;
   border-radius: 6px;
   width: 100%;
-  background-color: #f4f4f4;
+  background-color: #fff;
   font-size: 14px;
 }
 
@@ -282,13 +282,13 @@ tr:nth-child(even) {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  background-color: #f4f4f4;
+  background-color: #e9ecef;
   font-size: 14px;
   transition: 0.2s;
 }
 
 #form-transacao button[type='submit']:hover {
-  background-color: #f4f4f4;
+  background-color: #ddd;
 }
 
 /* Tres campos na mesma linha (Tipo, Número e Dígito) */
@@ -307,7 +307,7 @@ tr:nth-child(even) {
 
 .paginacao-container button {
   padding: 8px 16px;
-  border: 1px solid #f4f4f4
+  border: 1px solid #ccc;
   background-color: #fff;
   border-radius: 4px;
   cursor: pointer;
@@ -339,7 +339,7 @@ tr:nth-child(even) {
   justify-content: center;
   padding: 6px 12px;
   font-size: 13px;
-  border: 1px solid #f4f4f4;
+  border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
   transition:
@@ -372,7 +372,7 @@ tr:nth-child(even) {
   justify-content: center;
   padding: 2px 4px;
   font-size: 12px;
-  border: 1px solid #f4f4f4;
+  border: 1px solid #ccc;
   border-radius: 6px;
   cursor: pointer;
   transition:
