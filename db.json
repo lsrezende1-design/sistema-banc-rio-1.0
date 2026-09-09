@@ -85,6 +85,14 @@
       "saldo": 400,
       "status": "Ativa",
       "id": 4
+    },
+    {
+      "clienteId": 6,
+      "numeroConta": "013-1003-8",
+      "tipo": "Poupança",
+      "saldo": 80000,
+      "status": "Ativa",
+      "id": 6
     }
   ],
   "transacoes": [
@@ -111,6 +119,22 @@
       "saldoResultante": 500,
       "data": "05/09/2026, 18:00:24",
       "id": 3
+    },
+    {
+      "contaId": 6,
+      "tipo": "Depósito",
+      "valor": 100000,
+      "saldoResultante": 100000,
+      "data": "09/09/2026, 19:55:29",
+      "id": 4
+    },
+    {
+      "contaId": 6,
+      "tipo": "Saque",
+      "valor": 20000,
+      "saldoResultante": 80000,
+      "data": "09/09/2026, 19:56:04",
+      "id": 5
     }
   ]
 }
