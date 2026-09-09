@@ -108,4 +108,4 @@ Abra o arquivo `index.html` em qualquer navegador web moderno ou utilize uma ext
 - Fabyo Luiz Crizóstomo Kock
 - Lilian Siqueira Rezende
 - Wagner Rogério Cruz
-- Werlleyn Douglas
+- Werlleyn Douglas Assunção Santos
