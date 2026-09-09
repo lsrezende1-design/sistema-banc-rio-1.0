@@ -134,7 +134,7 @@ body {
 #filtro-cliente-nome,
 .card-filtros input {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #c7c6c6;
   border-radius: 6px;
   width: 100%;
   background-color: #fff;
@@ -453,7 +453,7 @@ body.dark tr:nth-child(even) {
 body.dark input,
 body.dark select {
   background-color: #0b132b;
-  color: #ffffff;
+  color: #05025f;
   border: 1px solid #2a3a5e;
 }
 body.dark input::placeholder {
@@ -491,4 +491,12 @@ body.dark #erro-transacao {
 body.dark #boasVindas,
 body.dark #usuarioLogado {
   color: #ff7b00;
+}
+
+/* =======================================*/
+/*          MENSAGEM DE SALDO             */
+/* =======================================*/
+
+body.dark .saldo-info {
+  color: #ffb703;
 }

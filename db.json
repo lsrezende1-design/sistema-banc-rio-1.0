@@ -4,49 +4,49 @@
       "nome": "Fabyo",
       "cpf": "11111111111",
       "email": "fabyo@gmail.com.br",
-      "id": 2
+      "id": "2"
     },
     {
       "nome": "Werlleyn",
       "cpf": "22233344455",
       "email": "werlleyn@gmail.com",
-      "id": 3
+      "id": "3"
     },
     {
       "nome": "Wagner Rogerio",
       "cpf": "22222222222",
       "email": "wagner@com.br",
-      "id": 4
+      "id": "4"
     },
     {
       "nome": "Pedro Augusto",
       "cpf": "12345678910",
       "email": "p@p",
-      "id": 5
+      "id": "5"
     },
     {
       "nome": "Josefa Barbosa",
       "cpf": "98765465400",
       "email": "josefabarbosa@email.com",
-      "id": 6
+      "id": "6"
     },
     {
       "nome": "Sandra Natale",
       "cpf": "11122233388",
       "email": "sandra@gmail.com",
-      "id": 8
+      "id": "8"
     }
   ],
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Roberto Silva",
       "usuario": "roberto",
       "senha": "1234",
       "perfil": "admin"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "João da Silva",
       "usuario": "joao",
       "senha": "abcd",
@@ -60,7 +60,7 @@
       "tipo": "Corrente",
       "saldo": 9300,
       "status": "Ativa",
-      "id": 1
+      "id": "1"
     },
     {
       "clienteId": 2,
@@ -68,7 +68,7 @@
       "tipo": "Poupança",
       "saldo": 0,
       "status": "Ativa",
-      "id": 2
+      "id": "2"
     },
     {
       "clienteId": 3,
@@ -76,7 +76,7 @@
       "tipo": "Corrente",
       "saldo": 0,
       "status": "Ativa",
-      "id": 3
+      "id": "3"
     },
     {
       "clienteId": 4,
@@ -93,6 +93,14 @@
       "saldo": 80000,
       "status": "Ativa",
       "id": 6
+    },
+    {
+      "clienteId": 6,
+      "numeroConta": "001-1003-5",
+      "tipo": "Corrente",
+      "saldo": 500,
+      "status": "Ativa",
+      "id": "2QRxFRgTeNc"
     }
   ],
   "transacoes": [
@@ -102,7 +110,7 @@
       "valor": 10000,
       "saldoResultante": 10000,
       "data": "05/09/2026, 17:00:26",
-      "id": 1
+      "id": "1"
     },
     {
       "contaId": 1,
@@ -110,7 +118,7 @@
       "valor": 700,
       "saldoResultante": 9300,
       "data": "05/09/2026, 17:06:54",
-      "id": 2
+      "id": "2"
     },
     {
       "contaId": 4,
@@ -135,6 +143,16 @@
       "saldoResultante": 80000,
       "data": "09/09/2026, 19:56:04",
       "id": 5
+      
+    },
+    {
+      "contaId": "2QRxFRgTeNc",
+      "tipo": "Depósito",
+      "valor": 500,
+      "saldoResultante": 500,
+      "data": "08/09/2026, 22:13:36",
+      "id": "IHfQlEgmdB4"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
