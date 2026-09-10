@@ -456,6 +456,15 @@ body.dark select {
   color: #05025f;
   border: 1px solid #2a3a5e;
 }
+
+body.dark #loginForm input {
+  color: #c7c6c6;
+}
+
+body.dark .filtro-grupo input {
+  color: #c7c6c6;
+}
+
 body.dark input::placeholder {
   color: #8d99ae;
 }
